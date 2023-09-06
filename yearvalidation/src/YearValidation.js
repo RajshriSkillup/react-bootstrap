@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Container, Form, Button, Alert } from 'react-bootstrap';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const YearValidation = () => {
   const [year, setYear] = useState('');
   const [alertType, setAlertType] = useState('');
@@ -34,7 +36,7 @@ const YearValidation = () => {
             onChange={handleYearChange}
           />
         </Form.Group>
-        <Button variant="primary" onClick={handleValidation}>
+        <Button className="mt-3" variant="primary" onClick={handleValidation}>
           Validate
         </Button>
       </Form>
