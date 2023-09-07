@@ -16,10 +16,10 @@ const YearValidation = () => {
     const parsedYear = parseInt(year);
     if (parsedYear >= 2000 && parsedYear <= 2023) {
       setAlertType('success');
-      setMessage('Year is within the valid range.');
+      setMessage('Success! Year entered is within the valid range.');
     } else {
       setAlertType('danger');
-      setMessage('Year is outside the valid range.');
+      setMessage('Error! Year is outside the valid range, please enter year between 2000-2023 only.');
     }
   };
 
@@ -28,12 +28,21 @@ const YearValidation = () => {
       <h1>Year Validation</h1>
       <Form>
         <Form.Group>
-          <Form.Label>Enter a valid year between 2000 – 2023:</Form.Label>
+          <Form.Label>Please enter a valid year between 2000-2023</Form.Label>
           <Form.Control
             type="number"
             placeholder="Enter year"
             value={year}
             onChange={handleYearChange}
+          />
+          <input
+            type="range"
+            min="2000"
+            max="2023"
+            value={year}
+            onChange={handleYearChange}
+            className="form-range" // Apply Bootstrap styling classes
+            style={{  color: 'black' }} // Apply custom color
           />
         </Form.Group>
         <Button className="mt-3" variant="primary" onClick={handleValidation}>
