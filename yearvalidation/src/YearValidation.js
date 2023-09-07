@@ -42,7 +42,9 @@ const YearValidation = () => {
             value={year}
             onChange={handleYearChange}
             className="form-range" // Apply Bootstrap styling classes
-            style={{  color: 'black' }} // Apply custom color
+            style={{  width: '80%', 
+              height: '5px',
+                  }} 
           />
         </Form.Group>
         <Button className="mt-3" variant="primary" onClick={handleValidation}>
